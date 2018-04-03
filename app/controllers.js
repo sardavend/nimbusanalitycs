@@ -11,6 +11,9 @@ function mainCtrl($scope, $uibModal) {
 		vin: 'FFFFFF'
 	}
 
+	$scope.labels = ["Riesgo Minimo", "Riesgo Moderado", "Riesgo Alto"];
+  	$scope.data = [250, 800, 400];
+
 
 	$scope.openVehicleDetails = function(size) {
 		let modalInstance = $uibModal.open({
@@ -28,6 +31,46 @@ function mainCtrl($scope, $uibModal) {
 		}) 
 
 	}
+
+
+	$scope.openVehicleMaintenances = function(size) {
+		let modalInstance = $uibModal.open({
+		animation: true,
+		templateUrl: 'VehicleMaintenanceModal.html',
+		controller: 'modalInstanceCtrl'	,
+		// size: size,
+		size: 'md',
+		resolve: {
+			vehicleDetails: function() {
+				return 	vehicleDetailsExample
+			}	
+		}
+
+		}) 
+
+	}
+
+	$scope.selectOptions = {
+            placeholder: "Selecciona Cliente...",
+            dataTextField: "name",
+            dataValueField: "id",
+            valuePrimitive: true,
+            autoBind: false,
+            dataSource:[
+            {"id":1, "name":"Codelco"},
+            {"id":2, "name":"Anglo American"},
+            {"id":3, "name":"Escondida"}
+            ]
+            // dataSource: {
+            //     type: "odata",
+            //     serverFiltering: true,
+            //     transport: {
+            //         read:{
+            //             url: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Products",
+            //         }
+            //     }
+            // }
+     };
 }
 
 function modalInstanceCtrl($scope, $uibModalInstance, vehicleDetails){

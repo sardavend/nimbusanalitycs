@@ -9,7 +9,8 @@ var app = angular.module('cubeWebApp', [
 	'ngAnimate',
 	'easypiechart',
 	'ui.bootstrap',
-	'chart.js'
+	'chart.js',
+	'kendo.directives'
 ]);
 
 app.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
