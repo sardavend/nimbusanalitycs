@@ -13,10 +13,15 @@ var app = angular.module('cubeWebApp', [
 	'kendo.directives'
 ]);
 
-app.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
+app.config(['cfpLoadingBarProvider','ChartJsProvider', function(cfpLoadingBarProvider, ChartJsProvider) {
 	cfpLoadingBarProvider.includeBar = true;
 	cfpLoadingBarProvider.includeSpinner = true;
 	cfpLoadingBarProvider.latencyThreshold = 100;
+
+	ChartJsProvider.setOptions({
+      colors: [ '#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360']
+    });
+
 }]);
 
 /**

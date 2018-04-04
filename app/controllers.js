@@ -6,6 +6,7 @@
 function mainCtrl($scope, $uibModal) {
 	$('#page-wrapper').removeClass('nav-small');
 
+
 	let vehicleDetailsExample = {
 		name: 'ABCDEIN',
 		vin: 'FFFFFF'
@@ -71,6 +72,39 @@ function mainCtrl($scope, $uibModal) {
             //     }
             // }
      };
+
+	$scope.selectOptionsCars = {
+            placeholder: "Selecciona Vehiculo...",
+            dataTextField: "name",
+            dataValueField: "id",
+            valuePrimitive: true,
+            autoBind: false,
+            dataSource:[
+            {"id":1, "name":"180APT"},
+            {"id":2, "name":"569ACB"},
+            {"id":3, "name":"145ACMP"}
+            ]
+     };
+
+       		$scope.labelsAccident = ["January", "February", "March", "April", "May", "June", "July"];
+  			$scope.seriesAccident = ['Eje X', 'Eje Y', 'Eje Z'];
+  			$scope.seriesAccident = ['Eje X'];
+  			$scope.dataAccident = [
+    				[65,59, 80, 81, 56, 55, 40, 65, 59, 80, 81, 56,55, 40],
+    				[28, 48, 40, 19, 86, 27, 90, 28, 48, 40, 19, 86, 27, 90],
+    				[34, 27, 60, 13, 96, 45, 100, 34, 27, 60, 13, 96, 45, 100]
+  			];
+
+
+  			// var mymap = L.map('mymap').setView([51.505, -0.09], 13);
+  			// L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    	// 	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    	// 	maxZoom: 18,
+    	// 	id: 'mapbox.streets',
+    	// 	accessToken: 'your.mapbox.access.token'
+			// }).addTo(mymap);
+
+
 }
 
 function modalInstanceCtrl($scope, $uibModalInstance, vehicleDetails){

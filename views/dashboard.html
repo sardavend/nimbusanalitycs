@@ -38,21 +38,19 @@
 
 <uib-tabset active="active" >
 	<uib-tab index="0" heading="Riesgo">
-		<div class="row">
+		<!-- <div class="row"> -->
 			<div class="main-box">
 				
 		<select kendo-multi-select k-options="selectOptions" k-ng-model="selectedIds"></select>	
 		<!-- <p ng-show="selectedIds.length" style="padding-top: 1em;">Selected: {{ selectedIds }}</p> -->
 			</div>
-		</div>
+		<!-- </div> -->
 		<div class="row">
 			<div class="col-md-6">
 				<div class="main-box">
 							<header class="main-box-header clearfix">
 								<h2 class="pull-left">Clasificacion Predictiva de Conduccion por Riesgo</h2>
 							</header>
-							<canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-options="options">
-							</canvas> 
 							<div class="main-box-body clearfix">
 								<div class="row">
 									<div class="col-lg-3 col-sm-6 col-xs-12">
@@ -60,6 +58,7 @@
 											<i class="fa fa-car"></i>
 											<span class="headline">Total</span>
 											<span class="value">1450</span>
+											<span class="text-small text-center">55%</span>
 										</div>
 									</div>	
 
@@ -71,6 +70,7 @@
 
 											<span class="headline">Minimo</span>
 											<span class="value">250</span>
+											<span class="text-small text-center">17%</span>
 										</div>
 									</div>
 
@@ -79,16 +79,23 @@
 											<i class="icon-car-compact"></i>
 											<span class="headline">Moderado</span>
 											<span class="value">800</span>
+											<span class="text-small text-center">55%</span>
 										</div>
 									</div>
 
 									<div class="col-lg-3 col-sm-6 col-xs-12">
 										<div class="main-box infographic-box colored red-bg">
 											<i class="icon-car-collision"></i>
-											<span class="headline">Altisimo</span>
+											<span class="headline">Alto</span>
 											<span class="value">400</span>
+											<span class="text-small text-center">28%</span>
 										</div>
 									</div>
+								</div>
+								<div class="row">
+									
+									<canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-options="options">
+									</canvas> 
 								</div>
 							</div>
 
@@ -113,11 +120,11 @@
 						<ul>
 							<li class="cleafix">
 								<div class="img">
-									<img src="img/samples/car.svg">	
+									<img src="assets/icons/gear.svg">	
 								</div>
 								<div class="title">
 									<a href="">Vehiculo 145ACMP</a>
-									Necesita Cambio de Aceite
+									RPM sobre 4000
 								</div>
 								<div class="post-time">
 									Hoy 5:22 am
@@ -131,11 +138,11 @@
 
 							<li class="cleafix">
 								<div class="img">
-									<img src="img/samples/car.svg">	
+									<img src="assets/icons/gear.svg">	
 								</div>
 								<div class="title">
 									<a href="">Vehiculo 569ACB</a>
-									Temperatura de Motor Excesiva
+									Acceleracion Excesiva
 								</div>
 								<div class="post-time">
 									Hoy 11:22 am
@@ -149,11 +156,65 @@
 
 							<li class="cleafix">
 								<div class="img">
-									<img src="img/samples/car.svg">	
+									<img src="assets/icons/gear.svg">	
 								</div>
 								<div class="title">
-									<a href="">UnidadACM-1PT</a>
-									Necesita Cambio de Aceite
+									<a href="">Vehiculo 180APT</a>
+									 Velocidad Excesiva
+								</div>
+								<div class="post-time">
+									Hoy 5:22 pm
+								</div>
+								<div class="time-ago">
+									<i class="fa fa-clock-o">
+										5 min.
+									</i>
+								</div>
+							</li>
+
+							<li class="cleafix">
+								<div class="img">
+									<img src="assets/icons/gear.svg">	
+								</div>
+								<div class="title">
+									<a href="">Vehiculo 145ACMP</a>
+									 Frenada Brusca
+								</div>
+								<div class="post-time">
+									Hoy 5:22 am
+								</div>
+								<div class="time-ago">
+									<i class="fa fa-clock-o">
+										6 hrs.
+									</i>
+								</div>
+							</li>
+
+							<li class="cleafix">
+								<div class="img">
+									<img src="assets/icons/gear.svg">	
+								</div>
+								<div class="title">
+									<a href="">Vehiculo 569ACB</a>
+									Posible Accidente
+								</div>
+								<div class="post-time">
+									Hoy 11:22 am
+								</div>
+								<div class="time-ago">
+									<i class="fa fa-clock-o">
+										5 min.
+									</i>
+								</div>
+							</li>
+
+							<li class="cleafix">
+								<div class="img">
+									<img src="assets/icons/gear.svg">	
+								</div>
+								<div class="title">
+									<a href="">Vehiculo ACM-1PT</a>
+									Posible Accidente
 								</div>
 								<div class="post-time">
 									Hoy 5:22 pm
@@ -355,7 +416,7 @@
 		</div>
 
 				<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-6">
 				<div class="main-box">
 					<header class="main-box-header clearfix">
 						<h2 class="pull-left"> Sugerencias de Mantenimiento </h2>
@@ -369,7 +430,7 @@
 
  -->						
 
- 								<div class="col-md-3">
+ 								<div class="col-md-12">
 								<ul class="graph-stats">
 									<li>
 										<div class="clearfix">
@@ -435,7 +496,102 @@
 
 								</ul>
 							</div>
-							<div class="col-md-9">
+
+
+						</div>
+					</div>
+				</div>	
+			</div>
+
+			<div class="col-md-6">
+				<div class="main-box feed">
+					<header class="main-box-header clearfix">
+						<h2 class="pull-left">Alertas</h2>
+					</header>
+					<div class="main-box-body clearfix">
+						<ul>
+							<li class="cleafix">
+								<div class="img">
+									<img src="assets/icons/maintenance.svg">	
+								</div>
+								<div class="title">
+									<a href="">Vehiculo 145ACMP</a>
+									Necesita Cambio de Aceite
+								</div>
+								<div class="post-time">
+									Hoy 5:22 am
+								</div>
+								<div class="time-ago">
+									<i class="fa fa-clock-o">
+										6 hrs.
+									</i>
+								</div>
+							</li>
+
+							<li class="cleafix">
+								<div class="img">
+									<img src="assets/icons/maintenance.svg">	
+								</div>
+								<div class="title">
+									<a href="">Vehiculo 569ACB</a>
+									Temperatura de Motor Excesiva
+								</div>
+								<div class="post-time">
+									Hoy 11:22 am
+								</div>
+								<div class="time-ago">
+									<i class="fa fa-clock-o">
+										5 min.
+									</i>
+								</div>
+							</li>
+
+							<li class="cleafix">
+								<div class="img">
+									<img src="assets/icons/maintenance.svg">	
+								</div>
+								<div class="title">
+									<a href="">UnidadACM-1PT</a>
+									Necesita Cambio de Aceite
+								</div>
+								<div class="post-time">
+									Hoy 5:22 pm
+								</div>
+								<div class="time-ago">
+									<i class="fa fa-clock-o">
+										5 min.
+									</i>
+								</div>
+							</li>
+
+<!-- 							<li class="cleafix">
+								<div class="img">
+									<img src="assets/icons/maintenance.svg">	
+								</div>
+								<div class="title">
+									<a href="">Vehiculo 145ACMP</a>
+									Necesita Cambio de Aceite
+								</div>
+								<div class="post-time">
+									Hoy 5:22 am
+								</div>
+								<div class="time-ago">
+									<i class="fa fa-clock-o">
+										6 hrs.
+									</i>
+								</div>
+							</li>
+ -->
+						</ul>
+						
+					</div>
+
+
+
+				</div>	
+			</div>
+			<div class="row">
+											<div class="col-md-12">
 							<div class="panel-group accordion" id="accordion">
 								<div class="panel panel-default">
 									<div class="panel-heading">
@@ -455,10 +611,8 @@
 											<th><a href=""><span>Patente</span></a></th>
 											<!-- <th><a href="" class="desc"><span>VIN</span></a></th> -->
 											<th><a href="" class="asc"><span>Cliente</span></a></th>
-	<!-- 										<th class="text-center"><span>Comportamiento/Manejo</span></th>
-											<th class="text-center"><span>Riesgo</span></th>
-	 -->										<th class="text-center"><span>DTC</span></th>
-	 -->										<th class="text-center"><span>Manimientos</span></th>
+	 										<th class="text-center"><span>DTC</span></th>
+	 										<th class="text-center"><span>Mantenimientos</span></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -466,26 +620,12 @@
 											<td>
 												<a href="">JFAZ990</a>
 											</td>
-	<!-- 										<td
-											>
-												5TEWN72N63Z275910
-											</td> -->
+
 											<td>
 												<a href="">Alvaro Tapia</a>
 											</td>
-	<!-- 										<td class="text-center">
-												90
-											</td>
-											<td class="text-center">
-												<span class="label label-danger">Alto</span>
-											</td>
-	 -->										<td class="text-center" style="width: 15%;" >
+	 										<td class="text-center" style="width: 15%;" >
 												<a href="" class="table-link">
-<!-- 													<span class="fa-stack" ng-click="openVehicleDetails('lg')">
-														<i class="fa fa-square fa-stack-2x"></i>
-														<i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-													</span>
- -->
 													<span class="fa-stack" ng-click="openVehicleDetails('lg')">
 														<i class="icon icond-battery"></i>
 														<!-- <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i> -->
@@ -499,7 +639,7 @@
 											</td>
 											<td class="text-center" style="width: 15%;" >
 												<a href="" class="table-link">
-													<span class="fa-stack" ng-click="openVehicleDetails('lg')">
+													<span class="fa-stack" ng-click="openVehicleMaintenances('lg')">
 														<i class="fa fa-square fa-stack-2x"></i>
 														<i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
 													</span>
@@ -510,20 +650,10 @@
 											<td>
 												<a href="">ABCDI99</a>
 											</td>
-	<!-- 										<td>
-												5GAKRDED0CJ396612
-											</td> -->
 											<td>
 												<a href="">John Wayne</a>
 											</td>
-	<!-- 										<td class="text-center">
-												71
-											</td>
-
-											<td class="text-center">
-												<span class="label label-danger">Alto</span>
-											</td>
-	 -->										<td class="text-center" style="width: 15%;" >
+											<td class="text-center" style="width: 15%;" >
 												<a href="" class="table-link">
 													<span class="fa-stack" ng-click="openVehicleDetails('lg')">
 														<i class="icon icond-battery"></i>
@@ -545,7 +675,7 @@
 											</td>
 											<td class="text-center" style="width: 15%;" >
 												<a href="" class="table-link">
-													<span class="fa-stack" ng-click="openVehicleDetails('lg')">
+													<span class="fa-stack" ng-click="openVehicleMaintenances('lg')">
 														<i class="fa fa-square fa-stack-2x"></i>
 														<i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
 													</span>
@@ -557,19 +687,10 @@
 											<td>
 												<a href="">JFAZ9915</a>
 											</td>
-	<!-- 										<td>
-												1GCHC33N7RJ376544
-											</td> -->
 											<td>
 												<a href="">Ramiro Crespo</a>
 											</td>
-	<!-- 										<td class="text-center">
-												90
-											</td>
-											<td class="text-center">
-												<span class="label label-danger">Alto</span>
-											</td>
-	 -->										<td class="text-center" style="width: 15%;" >
+											<td class="text-center" style="width: 15%;" >
 												<a href="" class="table-link">
 
 													<span class="fa-stack" ng-click="openVehicleDetails('lg')">
@@ -591,7 +712,7 @@
 
 											<td class="text-center" style="width: 15%;" >
 												<a href="" class="table-link">
-													<span class="fa-stack" ng-click="openVehicleDetails('lg')">
+													<span class="fa-stack" ng-click="openVehicleMaintenances('lg')">
 														<i class="fa fa-square fa-stack-2x"></i>
 														<i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
 													</span>
@@ -605,19 +726,10 @@
 											<td>
 												<a href="">JRCK78</a>
 											</td>
-	<!-- 										<td>
-												WBSPM9C52BE202514
-											</td> -->
 											<td>
 												<a href="">Sebastian Marconi</a>
 											</td>
-	<!-- 										<td class="text-center">
-												35
-											</td>
-											<td class="text-center">
-												<span class="label label-warning">Medio</span>
-											</td>
-	 -->										<td class="text-center" style="width: 15%;" ng-click="openVehicleDetails('lg')">
+											<td class="text-center" style="width: 15%;" ng-click="openVehicleDetails('lg')">
 												<a href="" class="table-link">
 													<span class="fa-stack" ng-click="openVehicleDetails('lg')">
 														<i class="icon icond-malfunction-indicador"></i>
@@ -638,7 +750,7 @@
 
 											<td class="text-center" style="width: 15%;" >
 												<a href="" class="table-link">
-													<span class="fa-stack" ng-click="openVehicleDetails('lg')">
+													<span class="fa-stack" ng-click="openVehicleMaintenances('lg')">
 														<i class="fa fa-square fa-stack-2x"></i>
 														<i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
 													</span>
@@ -649,19 +761,10 @@
 											<td>
 												<a href="">ARQK79</a>
 											</td>
-	<!-- 										<td>
-												2T1KR32EX3C158977
-											</td> -->
 											<td>
 												<a href="">Edison Tesla</a>
 											</td>
-	<!-- 										<td class="text-center">
-												34
-											</td>
-											<td class="text-center">
-												<span class="label label-warning">Medio</span>
-											</td>
-	 -->										<td class="text-center" style="width: 15%;" ng-click="openVehicleDetails('lg')">
+										<td class="text-center" style="width: 15%;" ng-click="openVehicleDetails('lg')">
 												<a href="" class="table-link">
 
 													<span class="fa-stack" ng-click="openVehicleDetails('lg')">
@@ -683,7 +786,7 @@
 											</td>
 										<td class="text-center" style="width: 15%;" >
 											<a href="" class="table-link">
-												<span class="fa-stack" ng-click="openVehicleDetails('lg')">
+												<span class="fa-stack" ng-click="openVehicleMaintenances('lg')">
 													<i class="fa fa-square fa-stack-2x"></i>
 													<i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
 												</span>
@@ -692,46 +795,42 @@
 										</tr>
 									</tbody>
 								</table>
+							</div>
 						</div>
 					</div>
-				</div>
-<div class="panel panel-default">
-<div class="panel-heading">
-<h4 class="panel-title">
-<!-- <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"> -->
-<a class="accordion-toggle" ng-click="isCollapse2!= !isCollapse2">
-Se debe coordinar mantenimiento el proximo mes	
-</a>
-</h4>
-</div>
-<!-- <div id="collapseTwo" class="panel-collapse collapse"> -->
-<div id="collapseTwo" class="panel-collapse collapse-in">
-<div class="panel-body" uib-collapse="isCollapse2">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+							<a class="accordion-toggle" ng-click="isCollapse2!= !isCollapse2">
+							Se debe coordinar mantenimiento el proximo mes	
+							</a>
+							</h4>
+						</div>
+					<!-- <div id="collapseTwo" class="panel-collapse collapse"> -->
+						<div id="collapseTwo" class="panel-collapse collapse-in">
+							<div class="panel-body" uib-collapse="isCollapse2">
 
-</div>
-</div>
-</div>
-<div class="panel panel-default">
-<div class="panel-heading">
-<h4 class="panel-title">
-<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-	Sin Observaciones
-</a>
-</h4>
-</div>
-<div id="collapseThree" class="panel-collapse collapse">
-<div class="panel-body">
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+									Sin Observaciones
+								</a>
+							</h4>
+						</div>
+						<div id="collapseThree" class="panel-collapse collapse">
+							<div class="panel-body">
 
-</div>
-</div>
-</div>
-</div>	
-
-								
 							</div>
 						</div>
 					</div>
 				</div>	
+
+								
+							</div>
 			</div>
 		</div>
 
@@ -739,101 +838,45 @@ Se debe coordinar mantenimiento el proximo mes
 
 
 
-		<section id="cd-timeline" class="cd-container">
-	<div class="cd-timeline-block">
-		<div class="cd-timeline-img cd-picture">
-			<i class="fa fa-photo fa-2x"></i>
-		</div>
 
-		<div class="cd-timeline-content">
-			<h2>Title of section 1</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
-			<div class="clearfix">
-				<a class="btn btn-primary pull-right">Read more</a>
-			</div>
-			<span class="cd-date">11:59</span>
-		</div>
-	</div>
 
-	<div class="cd-timeline-block">
-		<div class="cd-timeline-img cd-movie">
-			<i class="fa fa-video-camera fa-2x"></i>
-		</div>
-
-		<div class="cd-timeline-content">
-			<h2>Title of section 2</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
-			<div class="clearfix">
-				<a class="btn btn-primary pull-right">Read more</a>
-			</div>
-			<span class="cd-date">15:40</span>
-		</div>
-	</div>
-
-	<div class="cd-timeline-block">
-		<div class="cd-timeline-img cd-picture">
-			<i class="fa fa-photo fa-2x"></i>
-		</div>
-
-		<div class="cd-timeline-content">
-			<h2>Title of section 3</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>
-			<div class="clearfix">
-				<a class="btn btn-primary pull-right">Read more</a>
-			</div>
-			<span class="cd-date">18:12</span>
-		</div>
-	</div>
-
-	<div class="cd-timeline-block">
-		<div class="cd-timeline-img cd-location">
-			<i class="fa fa-map-marker fa-2x"></i>
-		</div>
-
-		<div class="cd-timeline-content">
-			<h2>Title of section 4</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
-			<div class="clearfix">
-				<a class="btn btn-primary pull-right">Read more</a>
-			</div>
-			<span class="cd-date">20:48</span>
-		</div>
-	</div>
-
-	<div class="cd-timeline-block">
-		<div class="cd-timeline-img cd-location">
-			<i class="fa fa-map-marker fa-2x"></i>
-		</div>
-
-		<div class="cd-timeline-content">
-			<h2>Title of section 5</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>
-			<div class="clearfix">
-				<a class="btn btn-primary pull-right">Read more</a>
-			</div>
-			<span class="cd-date">21:22</span>
-		</div>
-	</div>
-
-	<div class="cd-timeline-block">
-		<div class="cd-timeline-img cd-movie">
-			<i class="fa fa-video-camera fa-2x"></i>
-		</div>
-
-		<div class="cd-timeline-content">
-			<h2>Final Section</h2>
-			<p>This is the content of the last section</p>
-			<span class="cd-date">23:59</span>
-		</div>
-	</div>
-</section>
 
 
 	</uib-tab>
 	<uib-tab index="3" heading="Reconstruccion de Accidentes">
-		<div>
+		<div class="row">
+			<div class="main-box clearfix">
+
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<select kendo-multi-select k-options="selectOptions" k-ng-model="selectedIds"></select>	
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<select kendo-multi-select k-options="selectOptionsCars" k-ng-model="selectedUnit"></select>	
+				</div>
+				
+			</div>
 			
 		</div>
+		<div class="row">
+			<div class="main-box clearfix">
+
+				<div class="col-lg-6">
+					 <div id="mymap"></div>
+
+				</div>
+				<div class="col-lg-6">
+						<canvas id="line" class="chart chart-line" 
+										chart-data="dataAccident" 
+										chart-labels="labelsAccident" 
+										chart-series="seriesAccident" 
+										chart-options="optionsAccident" 
+										chart-dataset-override="datasetOverride" 
+										chart-click="onClick">
+						</canvas>
+				</div>
+				
+			</div>
+	</div>
 
 	</uib-tab>
 </uib-tabset>
@@ -1417,95 +1460,107 @@ Se debe coordinar mantenimiento el proximo mes
 
 	<div class="modal-header">
 	    <!-- <h3 class="modal-title" id="modal-title">Depreciacion Idea/Real - JFAZ990</h3> -->
-	    <h3 class="modal-title" id="modal-title">Perfil de Conduccion - Sebastian Marconi</h3>
+	    <h3 class="modal-title" id="modal-title">Mantenimientos Realizados - JFAZ990
+	    </h3>
 	</div>
 	<div class="modal-body" id="modal-body">
-<!-- 	    <ul>
-	        <li ng-repeat="item in $ctrl.items">
-	            <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
-	        </li>
-	    </ul> -->
-	    <!-- Selected: <b>{{ $ctrl.selected.item }}</b> -->
-	    <!-- <div class="col-lg-6 col-md-6 col-sm-12"> -->
-	    <div class="row">
-
-	    	<canvas id="line" class="chart chart-line" chart-data="data"
-			chart-labels="labels" chart-series="series" chart-options="options"
-			chart-dataset-override="datasetOverride" chart-click="onClick">
-			</canvas>
-	    	
-	    </div>
-		<!-- <div class="col-lg-6 col-md-6 col-sm-12" ng-controller="easyChartCtrl"> -->
-		<div class="row" ng-controller="easyChartCtrl">
-			<div class="main-box clearfix project-box green-box">
-				<div class="main-box-body clearfix">
-<!-- 					<div class="project-box-header green-bg">
-						<div class="name">
-							<a href="">
-								Perfil de Conduccion - Sebastian Marconi 
-							</a>
-						</div>
-					</div>
- -->					
-					<div class="project-box-content">
-						<!-- <span class="chart fa fa-level-down" easypiechart percent="50" options="optionsRed"> -->
-						<span class="chart" easypiechart percent="50" options="optionsRed">
-							<span class="percent "></span><br/>
-							<span class="lbl">Calificacion</span>
-						</span>
-					</div>
-					
-					<div class="project-box-footer clearfix">
-						<a href="">
-							<i class="fa fa-level-up red">
-								<span class="value ">28000</span>
-							</i>
-							<span class="label">Km.</span>
-						</a>
-						<a href="">
-							<i class="fa fa-level-up red">
-								<span class="value">1700</span>
-							</i>
-							<span class="label">Horas</span>
-						</a>
-						<a href="">
-							<i class="fa fa-level-down green ">
-								<span class="value">800</span>
-							</i>
-							<span class="label">promedio R.P.M.</span>
-						</a>
-
-						<a href="">
-							<i class="fa fa-level-down green ">
-								<span class="value">70</span>
-							</i>
-							<span class="label">promedio Temperatura Motor</span>
-						</a>
-						<a href="">
-							<i class="fa fa-level-down green ">
-								<span class="value">30</span>
-							</i>
-							<span class="label">Infracciones</span>
-						</a>
-					</div>
-					
-					<div class="project-box-ultrafooter clearfix">
-<!-- 						<img class="project-img-owner" alt="" src="img/samples/lima-300.jpg" data-toggle="tooltip" title="Adriana Lima"/>
-						<img class="project-img-owner" alt="" src="img/samples/robert-300.jpg" data-toggle="tooltip" title="Robert Downey Jr."/>
-						<img class="project-img-owner" alt="" src="img/samples/angelina-300.jpg" data-toggle="tooltip" title="Angelina Jolie"/> -->
-						
-						<a href="" class="link pull-right">
-							<i class="fa fa-arrow-circle-right fa-lg"></i>
-						</a>
-					</div>
-				</div>
-			</div>
+	<section id="cd-timeline" class="cd-container">
+	<div class="cd-timeline-block">
+		<div class="cd-timeline-img cd-picture">
+			<i class="fa fa-photo fa-2x"></i>
 		</div>
 
+		<div class="cd-timeline-content">
+			<h2>Maintenance Plan 1</h2>
+			<p> Cambio de aceite</p>
+			<p> Cambio de filtros</p>
+			<div class="clearfix">
+				<a class="btn btn-primary pull-right">Mas detalles</a>
+			</div>
+			<span class="cd-date">11:59</span>
+		</div>
+	</div>
 
-<!-- 			<p>{{ vehicleDetails}}</p>
-			<p>{{ data}}</p>
- -->	</div>
+	<div class="cd-timeline-block">
+		<div class="cd-timeline-img cd-movie">
+			<i class="fa fa-video-camera fa-2x"></i>
+		</div>
+
+		<div class="cd-timeline-content">
+			<h2>Maintenance Plan 1</h2>
+			<p> Cambio de aceite</p>
+			<p> Cambio de filtros</p>
+			<div class="clearfix">
+				<a class="btn btn-primary pull-right">Mas detalles</a>
+			</div>
+			<span class="cd-date">15:40</span>
+		</div>
+	</div>
+
+	<div class="cd-timeline-block">
+		<div class="cd-timeline-img cd-picture">
+			<i class="fa fa-photo fa-2x"></i>
+		</div>
+
+		<div class="cd-timeline-content">
+			<h2>Maintenance Plan 1</h2>
+			<p> Cambio de aceite</p>
+			<p> Cambio de filtros</p>
+			<div class="clearfix">
+				<a class="btn btn-primary pull-right">Mas detalles</a>
+			</div>
+			<span class="cd-date">18:12</span>
+		</div>
+	</div>
+
+	<div class="cd-timeline-block">
+		<div class="cd-timeline-img cd-location">
+			<i class="fa fa-map-marker fa-2x"></i>
+		</div>
+
+		<div class="cd-timeline-content">
+			<h2>Maintenance Plan 1</h2>
+			<p> Cambio de aceite</p>
+			<p> Cambio de filtros</p>
+			<div class="clearfix">
+				<a class="btn btn-primary pull-right">Mas detalles</a>
+			</div>
+			<span class="cd-date">20:48</span>
+		</div>
+	</div>
+
+	<div class="cd-timeline-block">
+		<div class="cd-timeline-img cd-location">
+			<i class="fa fa-map-marker fa-2x"></i>
+		</div>
+
+		<div class="cd-timeline-content">
+			<h2>Maintenance Plan 1</h2>
+			<p> Cambio de aceite</p>
+			<p> Cambio de filtros</p>
+			<div class="clearfix">
+				<a class="btn btn-primary pull-right">Mas detalles</a>
+			</div>
+			<span class="cd-date">21:22</span>
+		</div>
+	</div>
+
+	<div class="cd-timeline-block">
+		<div class="cd-timeline-img cd-movie">
+			<i class="fa fa-video-camera fa-2x"></i>
+		</div>
+
+		<div class="cd-timeline-content">
+			<h2>Maintenance Plan 1</h2>
+			<p> Cambio de aceite</p>
+			<p> Cambio de filtros</p>
+			<div class="clearfix">
+				<a class="btn btn-primary pull-right">Mas detalles</a>
+			</div>
+			<span class="cd-date">23:59</span>
+		</div>
+	</div>
+</section>
 	<div class="modal-footer">
 	    <button class="btn btn-primary" type="button" ng-click="close()">OK</button>
 	    <!--<button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>-->
