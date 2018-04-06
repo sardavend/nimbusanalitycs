@@ -3,14 +3,14 @@
 		<div id="content-header" class="clearfix">
 			<div class="pull-left">
 				<ol class="breadcrumb">
-					<li><a href="">Home</a></li>
+					<!-- <li><a href="">Home</a></li> -->
 					<li class="active"><span>Gestion Leasing - Dashboard</span></li>
 				</ol>
 				
-				<h1>Gestion Leasing - Dashboard</h1>
+				<!-- <h1>Gestion Leasing - Dashboard</h1> -->
 			</div>
 
-			<div class="pull-right hidden-xs">
+<!-- 			<div class="pull-right hidden-xs">
 				<div class="xs-graph pull-left">
 					<div class="graph-label">
 						<b><i class="fa fa-car"></i> 390</b> Riesgo Moderado
@@ -24,13 +24,10 @@
 					<div class="graph-label">
 						<b><i class="fa fa-car"></i> 250</b> Riesgo Alto 
 					</div>
-<!-- 					<div class="graph-label">
-						<b>250</b> Alto
-					</div>
- -->					<div class="graph-content spark-revenues"></div>
+				<div class="graph-content spark-revenues"></div>
 				</div>
 			</div>
-		</div>
+ -->		</div>
 	</div>
 </div>
 
@@ -39,65 +36,148 @@
 <uib-tabset active="active" >
 	<uib-tab index="0" heading="Riesgo">
 		<!-- <div class="row"> -->
-			<div class="main-box">
+			<div class="row">
+				<div class="col-lg-6">
+
+					<div class="main-box">
+						
+						<select kendo-multi-select k-options="selectOptions" k-ng-model="selectedIds"></select>	
+				<!-- <p ng-show="selectedIds.length" style="padding-top: 1em;">Selected: {{ selectedIds }}</p> -->
+					</div>
+					
+				</div>
+
+				<div class="col-lg-6">
+					
+					<div class="main-box">
+						
+						<select kendo-multi-select k-options="selectOptionsSegments" k-ng-model="selectedIdsSegment"></select>	
+				<!-- <p ng-show="selectedIds.length" style="padding-top: 1em;">Selected: {{ selectedIds }}</p> -->
+					</div>
+					
+				</div>
+
 				
-		<select kendo-multi-select k-options="selectOptions" k-ng-model="selectedIds"></select>	
-		<!-- <p ng-show="selectedIds.length" style="padding-top: 1em;">Selected: {{ selectedIds }}</p> -->
 			</div>
 		<!-- </div> -->
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-8">
 				<div class="main-box">
-							<header class="main-box-header clearfix">
-								<h2 class="pull-left">Clasificacion Predictiva Riesgo Operativo</h2>
-							</header>
-							<div class="main-box-body clearfix">
+							<header class="main-box-header-semaforo clearfix">
 								<div class="row">
+									<div class="col-sm-6 col-xs-6">
+										<h2 class="pull-left">Clasificacion Predictiva Riesgo Operativo </h2>
+									</div>
+									<div class="col-sm-6 col-xs-6">
+								 		<h2 class="pull-right">Flota Total: 1450</h2>
+									</div>
+								</div>
+
+							</header>
+							<div class="main-box-body-semaforo clearfix">
+<!-- 								<div class="row">
 									<div class="col-lg-3 col-sm-6 col-xs-12">
 										<div class="main-box infographic-box colored emerald-bg">
-											<i class="fa fa-car"></i>
 											<span class="headline">Total</span>
 											<span class="value">55%</span>
 											<span class="text-small text-center">1450</span>
 										</div>
 									</div>	
-
 									
-									<div class="col-lg-3 col-sm-6 col-xs-12">
-										<div class="main-box infographic-box colored green-bg">
-											<!-- <i class="fa fa-envelope"></i> -->
-											<i class="icon-parked-car"></i>
+ -->								<div class="row">
+ 										<div class="col-lg-4">
+ 											<div class="row">
 
-											<span class="headline">Minimo</span>
-											<span class="value">17%</span>
-											<span class="text-small text-center">250</span>
-										</div>
-									</div>
+												<div class="col-lg-12 col-sm-12 col-xs-12">
+													<div class="main-box infographic-box colored green-bg">
+														<!-- <i class="fa fa-envelope"></i> -->
+														<div class="row">
 
-									<div class="col-lg-3 col-sm-6 col-xs-12">
-										<div class="main-box infographic-box colored yellow-bg">
-											<i class="icon-car-compact"></i>
-											<span class="headline">Moderado</span>
-											<span class="value">55%</span>
-											<span class="text-small text-center">800</span>
-										</div>
-									</div>
+															<div class="col-sm-6 col-xs-6">
 
-									<div class="col-lg-3 col-sm-6 col-xs-12">
-										<div class="main-box infographic-box colored red-bg">
-											<i class="icon-car-collision"></i>
-											<span class="headline">Alto</span>
-											<span class="value">28%</span>
-											<span class="text-small text-center">400</span>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									
-									<canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-options="options">
-									</canvas> 
-								</div>
+																<span class="value-percent">17%</span>
+															</div>
+
+															<div class="col-sm-6 col-xs-6">
+																<span class="headline">Minimo</span>
+																<span class="value-semaforo">250</span>
+															</div>
+															
+														</div>
+
+														<!-- <span class="text-small text-center">250</span> -->
+													</div>
+												</div>
+ 											</div>
+<!--  											<dir class="row">
+												<div class="col-lg-12 col-sm-12 col-xs-12">
+													<div class="main-box infographic-box colored yellow-bg">
+														<span class="headline">Moderado</span>
+														<span class="value">55%</span>
+													</div>
+												</div>
+ 											</dir>
+
+ --> 										
+
+ 										<div class="row">
+ 												
+												<div class="col-lg-12 col-sm-12 col-xs-12">
+													<div class="main-box infographic-box colored yellow-bg">
+														<div class="row">
+
+															<div class="col-sm-6 col-xs-6">
+																<span class="value-percent">28%</span>
+															</div>
+
+															<div class="col-sm-6 col-xs-6">
+																<span class="headline">Moderado</span>
+																<span class="value-semaforo">800</span>
+															</div>
+															
+														</div>
+
+														<!-- <span class="text-small text-center">400</span> -->
+													</div>
+												</div>
+
+ 											</div>
+ 											<div class="row">
+ 												
+												<div class="col-lg-12 col-sm-12 col-xs-12">
+													<div class="main-box infographic-box colored red-bg" ng-click="openVehicleClass('lg')">
+
+														<div class="row">
+
+															<div class="col-sm-6 col-xs-6">
+																<span class="value-percent">28%</span>
+															</div>
+
+															<div class="col-sm-6 col-xs-6">
+																<span class="headline">Alto</span>
+																<span class="value-semaforo">400</span>
+															</div>
+															
+														</div>
+
+														<!-- <span class="text-small text-center">400</span> -->
+													</div>
+												</div>
+
+ 											</div>
+
+
+ 											
+ 										</div>
+ 										<div class="col-lg-8">
+ 											
+											<canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-options="options">
+											</canvas> 
+
+ 										</div>
+ 									</div>
 							</div>
+							<!-- </div> -->
 
 							<!-- <div class="col-lg-3 col-sm-6 col-xs-12">
 								<div class="main-box infographic-box colored purple-bg">
@@ -111,12 +191,12 @@
 
 				</div>	
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-4">
 				<div class="main-box feed">
-					<header class="main-box-header clearfix">
-						<h2 class="pull-left">Alertas</h2>
+					<header class="main-box-header-semaforo clearfix">
+						<h2  class="pull-left"><span class="fa fa-exclamation-triangle"></span> Alertas</h2>
 					</header>
-					<div class="main-box-body clearfix">
+					<div class="main-box-body-semaforo clearfix">
 						<ul>
 							<li class="cleafix">
 								<div class="img">
@@ -136,7 +216,7 @@
 								</div>
 							</li>
 
-							<li class="cleafix">
+							<li class="cleafix lizebra">
 								<div class="img">
 									<img src="assets/icons/gear.svg">	
 								</div>
@@ -172,7 +252,7 @@
 								</div>
 							</li>
 
-							<li class="cleafix">
+							<li class="cleafix lizebra">
 								<div class="img">
 									<img src="assets/icons/gear.svg">	
 								</div>
@@ -190,7 +270,7 @@
 								</div>
 							</li>
 
-							<li class="cleafix">
+<!-- 							<li class="cleafix">
 								<div class="img">
 									<img src="assets/icons/gear.svg">	
 								</div>
@@ -225,7 +305,7 @@
 									</i>
 								</div>
 							</li>
-						</ul>
+ -->					</ul>
 						
 					</div>
 
@@ -238,7 +318,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="main-box clearfix">
-					<header class="main-box-header clearfix">
+					<header class="main-box-header-semaforo clearfix">
 						<h2 class="pull-left">Lista de Vehiculos / Riesgo Operativo</h2>
 						
 						<div class="filter-block pull-right">
@@ -261,7 +341,7 @@
 										<th><a href=""><span>Patente</span></a></th>
 										<th><a href="" class="desc"><span>VIN</span></a></th>
 										<th><a href="" class="asc"><span>Cliente</span></a></th>
-										<th class="text-center"><span>Comportamiento/Manejo</span></th>
+										<th class="text-center"><span>Data Trouble Code</span></th>
 										<th class="text-center"><span>Riesgo</span></th>
 										<th class="text-center"><span>Detalles</span></th>
 									</tr>
@@ -279,10 +359,22 @@
 											<a href="">Alvaro Tapia</a>
 										</td>
 										<td class="text-center">
-											90
+											<a href="" class="table-link">
+												<span class="fa-stack" ng-click="openVehicleDetails('lg')">
+													<i class="icon icond-battery"></i>
+														<!-- <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i> -->
+												</span>
+
+												<span class="fa-stack" ng-click="openVehicleDetails('lg')">
+													<i class="icon icond-oil"></i>
+														<!-- <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i> -->
+												</span>
+											</a>
+
 										</td>
 										<td class="text-center">
 											<span class="label label-danger">Alto</span>
+
 										</td>
 										<td class="text-center" style="width: 15%;" >
 											<a href="" class="table-link">
@@ -304,7 +396,24 @@
 											<a href="">John Wayne</a>
 										</td>
 										<td class="text-center">
-											71
+											<a href="" class="table-link">
+													<span class="fa-stack" ng-click="openVehicleDetails('lg')">
+														<i class="icon icond-battery"></i>
+														<!-- <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i> -->
+													</span>
+
+													<span class="fa-stack" ng-click="openVehicleDetails('lg')">
+														<i class="icon icond-oil"></i>
+														<!-- <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i> -->
+													</span>
+
+													<span class="fa-stack" ng-click="openVehicleDetails('lg')">
+														<i class="icon icond-engine-coolant"></i>
+														<!-- <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i> -->
+													</span>
+	
+
+												</a>
 										</td>
 
 										<td class="text-center">
@@ -330,7 +439,23 @@
 											<a href="">Ramiro Crespo</a>
 										</td>
 										<td class="text-center">
-											90
+											<a href="" class="table-link">
+
+													<span class="fa-stack" ng-click="openVehicleDetails('lg')">
+														<i class="icon icond-battery"></i>
+														<!-- <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i> -->
+													</span>
+
+													<span class="fa-stack" ng-click="openVehicleDetails('lg')">
+														<i class="icon icond-oil"></i>
+														<!-- <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i> -->
+													</span>
+
+													<span class="fa-stack" ng-click="openVehicleDetails('lg')">
+														<i class="icon icond-engine-coolant"></i>
+														<!-- <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i> -->
+													</span>
+												</a>
 										</td>
 										<td class="text-center">
 											<span class="label label-danger">Alto</span>
@@ -358,7 +483,24 @@
 											<a href="">Sebastian Marconi</a>
 										</td>
 										<td class="text-center">
-											35
+											<a href="" class="table-link">
+
+													<span class="fa-stack" ng-click="openVehicleDetails('lg')">
+														<i class="icon icond-battery"></i>
+														<!-- <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i> -->
+													</span>
+
+													<span class="fa-stack" ng-click="openVehicleDetails('lg')">
+														<i class="icon icond-brake-system-warning"></i>
+														<!-- <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i> -->
+													</span>
+
+													<span class="fa-stack" ng-click="openVehicleDetails('lg')">
+														<i class="icon icond-engine-coolant"></i>
+														<!-- <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i> -->
+													</span>
+
+												</a>
 										</td>
 										<td class="text-center">
 											<span class="label label-warning">Medio</span>
@@ -383,7 +525,22 @@
 											<a href="">Edison Tesla</a>
 										</td>
 										<td class="text-center">
-											34
+											<a href="" class="table-link">
+													<span class="fa-stack" ng-click="openVehicleDetails('lg')">
+														<i class="icon icond-malfunction-indicador"></i>
+														<!-- <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i> -->
+													</span>
+
+													<span class="fa-stack" ng-click="openVehicleDetails('lg')">
+														<i class="icon icond-oil"></i>
+														<!-- <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i> -->
+													</span>
+
+													<span class="fa-stack" ng-click="openVehicleDetails('lg')">
+														<i class="icon icond-engine-coolant"></i>
+														<!-- <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i> -->
+													</span>
+													</a>
 										</td>
 										<td class="text-center">
 											<span class="label label-warning">Medio</span>
@@ -1359,7 +1516,7 @@
 
 	<div class="modal-header">
 	    <!-- <h3 class="modal-title" id="modal-title">Depreciacion Idea/Real - JFAZ990</h3> -->
-	    <h3 class="modal-title" id="modal-title">Perfil de Conduccion - Sebastian Marconi</h3>
+	    <h3 class="modal-title" id="modal-title">Depreciacion Vehiculo - JFAZ990</h3>
 	</div>
 	<div class="modal-body" id="modal-body">
 <!-- 	    <ul>
@@ -1448,6 +1605,203 @@
 <!-- 			<p>{{ vehicleDetails}}</p>
 			<p>{{ data}}</p>
  -->	</div>
+	<div class="modal-footer">
+	    <button class="btn btn-primary" type="button" ng-click="close()">OK</button>
+	    <!--<button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>-->
+	</div>	
+
+</script>
+
+
+
+<script type="text/ng-template" id="VehicleDetailsClassModal.html">
+
+	<div class="modal-header">
+	    <!-- <h3 class="modal-title" id="modal-title">Depreciacion Idea/Real - JFAZ990</h3> -->
+	    <h3 class="modal-title" id="modal-title">Clasificacion - Riesgo Alto</h3>
+	</div>
+	<div class="modal-body" id="modal-body">
+<!-- 	    <ul>
+	        <li ng-repeat="item in $ctrl.items">
+	            <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
+	        </li>
+	    </ul> -->
+	    <!-- Selected: <b>{{ $ctrl.selected.item }}</b> -->
+	    <!-- <div class="col-lg-6 col-md-6 col-sm-12"> -->
+	    <div class="row">
+
+<!-- 	    	<canvas id="line" class="chart chart-line" chart-data="data"
+			chart-labels="labels" chart-series="series" chart-options="options"
+			chart-dataset-override="datasetOverride" chart-click="onClick">
+			</canvas>
+ -->	    	
+
+ 		<!-- <div class="col-lg-6 col-md-6 col-sm-12" ng-controller="easyChartCtrl"> -->
+						<div class="table-responsive clearfix">
+							<table class="table table-hover">
+<!-- 								<thead>
+									<tr>
+										<th><a href=""><span>Patente</span></a></th>
+										<th><a href="" class="desc"><span>VIN</span></a></th>
+										<th><a href="" class="asc"><span>Cliente</span></a></th>
+										<th class="text-center"><span>Data Trouble Code</span></th>
+										<th class="text-center"><span>Riesgo</span></th>
+										<th class="text-center"><span>Detalles</span></th>
+									</tr>
+								</thead>
+ -->								<tbody>
+									<tr>
+										<td class="cell-variable">
+											<!-- <a href="">JFAZ990</a> -->
+											<div class="variable"> RPM</div>										
+										</td>
+										<td
+										>
+											<div style="text-align: center">ACTUAL</div>
+											<div style="text-align: center">5800</div>
+										</td>
+										<td>
+											<div style="text-align: center">MEDIA</div>
+											<div style="text-align: center">4500</div>
+										</td>
+										<td class="text-center">
+
+											<div class="fa fa-level-up red"></div>	
+
+										</td>
+										<td class="text-center">
+
+											<div style="text-align: center; font-size: 2.1em;">+28</div>
+											<div style="text-align: center">120 Vehiculos</div>
+
+										</td>
+										<td class="text-center" style="width: 15%;" >
+											<a href="" class="table-link">
+												<span class="fa-stack" ng-click="openVehicleDetails('lg')">
+													<i class="fa fa-square fa-stack-2x"></i>
+													<i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+												</span>
+											</a>
+										</td>
+									</tr>
+									<tr>
+
+										<td class="cell-variable">
+											<!-- <a href="">JFAZ990</a> -->
+											<div class="variable">Distancia Recorrida</div>										
+										</td>
+										<td
+										>
+											<div style="text-align: center">ACTUAL</div>
+											<div style="text-align: center">5800</div>
+										</td>
+										<td>
+											<div style="text-align: center">MEDIA</div>
+											<div style="text-align: center">4500</div>
+										</td>
+										<td class="text-center">
+
+											<div class="fa fa-level-up red"></div>	
+
+										</td>
+										<td class="text-center">
+
+											<div style="text-align: center; font-size: 2.1em;">+28</div>
+											<div style="text-align: center">120 Vehiculos</div>
+
+										</td>
+										<td class="text-center" style="width: 15%;" >
+											<a href="" class="table-link">
+												<span class="fa-stack" ng-click="openVehicleDetails('lg')">
+													<i class="fa fa-square fa-stack-2x"></i>
+													<i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+												</span>
+											</a>
+										</td>
+									</tr>
+									<tr>
+										<td class="cell-variable">
+											<!-- <a href="">JFAZ990</a> -->
+											<div class="variable">Temperatura de Radiador</div>										
+										</td>
+										<td
+										>
+											<div style="text-align: center">ACTUAL</div>
+											<div style="text-align: center">5800</div>
+										</td>
+										<td>
+											<div style="text-align: center">MEDIA</div>
+											<div style="text-align: center">4500</div>
+										</td>
+										<td class="text-center">
+
+											<div class="fa fa-level-up red"></div>	
+
+										</td>
+										<td class="text-center">
+
+											<div style="text-align: center; font-size: 2.1em;">+28</div>
+											<div style="text-align: center">120 Vehiculos</div>
+
+										</td>
+										<td class="text-center" style="width: 15%;" >
+											<a href="" class="table-link">
+												<span class="fa-stack" ng-click="openVehicleDetails('lg')">
+													<i class="fa fa-square fa-stack-2x"></i>
+													<i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+												</span>
+											</a>
+										</td>
+
+
+
+									</tr>
+									<tr>
+
+										<td class="cell-variable">
+											<!-- <a href="">JFAZ990</a> -->
+											<div class="variable">Temperatura de Aceite</div>										
+										</td>
+										<td
+										>
+											<div style="text-align: center">ACTUAL</div>
+											<div style="text-align: center">5800</div>
+										</td>
+										<td>
+											<div style="text-align: center">MEDIA</div>
+											<div style="text-align: center">4500</div>
+										</td>
+										<td class="text-center">
+
+											<div class="fa fa-level-up red"></div>	
+
+										</td>
+										<td class="text-center">
+
+											<div style="text-align: center; font-size: 2.1em;">+28</div>
+											<div style="text-align: center">120 Vehiculos</div>
+
+										</td>
+										<td class="text-center" style="width: 15%;" >
+											<a href="" class="table-link">
+												<span class="fa-stack" ng-click="openVehicleDetails('lg')">
+													<i class="fa fa-square fa-stack-2x"></i>
+													<i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+												</span>
+											</a>
+										</td>
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+	    </div>
+
+
+
+<!-- 			<p>{{ vehicleDetails}}</p>
+			<p>{{ data}}</p>
+ --></div>
 	<div class="modal-footer">
 	    <button class="btn btn-primary" type="button" ng-click="close()">OK</button>
 	    <!--<button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>-->

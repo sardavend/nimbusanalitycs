@@ -6150,4 +6150,52 @@ svg {
 .fa-level-up {
   font-family: sans-serif;
 }
+
+.main-box .main-box-body-semaforo {
+  padding: 20px 20px 20px 20px;
+}
+
+.main-box .main-box-header-semaforo {
+      font-weight: bold;
+      min-height: 50px;
+      padding: 10px 20px;
+      background-color:#666;
+      color:#fff;
+}
+
+.infographic-box .value-percent{
+    font-size: 2.5em;
+    font-weight: 900;
+    margin-top: -5px;
+    display: block;
+    text-align: right;
+}
+
+.infographic-box .value-semaforo {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-top: -5px;
+    display: block;
+    text-align: right;
+}
+
+.feed .lizebra {
+    border-bottom: 2px solid #ebebeb;
+    padding: 15px 0;
+    font-size: 0.875em;
+    position: relative;
+    background-color: #f3f5f6;
+}
+
+.cell-variable {
+    background: red;
+    color: white;
+    font-weight: 900;
+}
+
+.variable {
+  text-align: center; 
+  font-weight: 900
+}
+
 #mymap{ height: 180px; }

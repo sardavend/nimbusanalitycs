@@ -34,6 +34,24 @@ function mainCtrl($scope, $uibModal) {
 	}
 
 
+	$scope.openVehicleClass = function(size) {
+		let modalInstance = $uibModal.open({
+		animation: true,
+		templateUrl: 'VehicleDetailsClassModal.html',
+		controller: 'modalInstanceCtrl'	,
+		// size: size,
+		size: 'md',
+		resolve: {
+			vehicleDetails: function() {
+				return 	vehicleDetailsExample
+			}	
+		}
+
+		}) 
+
+	}
+
+
 	$scope.openVehicleMaintenances = function(size) {
 		let modalInstance = $uibModal.open({
 		animation: true,
@@ -61,6 +79,29 @@ function mainCtrl($scope, $uibModal) {
             {"id":1, "name":"Codelco"},
             {"id":2, "name":"Anglo American"},
             {"id":3, "name":"Escondida"}
+            ]
+            // dataSource: {
+            //     type: "odata",
+            //     serverFiltering: true,
+            //     transport: {
+            //         read:{
+            //             url: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Products",
+            //         }
+            //     }
+            // }
+     };
+
+
+	$scope.selectOptionsSegments = {
+            placeholder: "Selecciona Segmento...",
+            dataTextField: "name",
+            dataValueField: "id",
+            valuePrimitive: true,
+            autoBind: false,
+            dataSource:[
+            {"id":1, "name":"Norte"},
+            {"id":2, "name":"Centro"},
+            {"id":3, "name":"Sur"}
             ]
             // dataSource: {
             //     type: "odata",
@@ -122,7 +163,9 @@ function modalInstanceCtrl($scope, $uibModalInstance, vehicleDetails){
 
 
   $scope.data = [
-    [100, 80, 70, 60, 50, 80, 50]
+    [100, 80, 70, 60, 50, 40, 30],
+    [100, 80, 70, 50, 40, 20, 10]
+
   ];
   $scope.onClick = function (points, evt) {
     console.log(points, evt);
